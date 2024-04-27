@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GFresh</title>
+        <!-- Font Awesome CDN -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        >
+        <!-- Font Awesome CDN -->
+        <!-- Linking CSS File -->
+        <link rel="stylesheet" href="/static/css/style.css">
+        <!-- Linking CSS File -->
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/static/images/shop.png" type="/static/image/x-icon">
+        <!-- Favicon -->
+        <!-- Swiper CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <!-- Swiper CDN -->
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header class="header">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <b>GFresh</b>
+            </a>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#products">Products</a>
+                <a href="#categories">Categories</a>
+                <a href="#review">Review</a>
+                <a href="#blogs">Blogs</a>
+            </nav>
+            <div class="icons">
+                <div class="fa fa-bars" id="menu-btn"></div>
+                <div class="fa fa-search" id="search-btn"></div>
+                <div class="fa fa-shopping-cart" id="cart-btn"></div>
+                <a href="/login" class="fa fa-user login" id="login-btn"></a>
+                <a href="/aboutus" class="fa-solid fa-people-group aboutus" id="abouts-btn"></a>
+                <a href="/contact" class="fa-solid fa-address-book contact" id="contact-btn"></a>
+
+            </div>
+            <form class="search-form" method = "POST" action ="{% url 'search' %}">
+                <input type="text" placeholder="Search Here..." id="search-box">
+                <label for="search-box" class="fa fa-search"></label>
+            </form>
+            <div class="shopping-cart">
+                <div class="box">
+                    <i class="fa fa-trash"></i>
+                    <img src="/static/images/cart-img-1.png" alt="">
+                    <div class="content">
+                        <h3>Watermelon</h3>
+                        <span class="price">₹50/-</span>
+                        <span class="Quantity">Qty : 1</span>
+                    </div>
+                </div>
+                {% comment %} <div class="box">
+                    <i class="fa fa-trash"></i>
+                    <img src="/static/images/cart-img-2.png" alt="">
+                    <div class="content">
+                        <h3>Onion</h3>
+                        <span class="price">₹80/-</span>
+                        <span class="Quantity">Qty : 1</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fa fa-trash"></i>
+                    <img src="/static/images/Spinach.png" alt="" id="spinach">
+                    <div class="content">
+                        <h3>Spinach</h3>
+                        <span class="price">₹120/-</span>
+                        <span class="Quantity">Qty : 1</span>
+                    </div>
+                </div> {% endcomment %}
+                <div class="total">Total : ₹250/-</div>
+                <a href="#" class="btn">Checkout</a>
+            </div>
+            {% comment %} <form action="#" class="login-form">
+                <h3>Login Now</h3>
+                <input type="email" placeholder="Enter Your Email" class="box">
+                <input type="password" placeholder="Enter Your Password" class="box">
+                <p>
+                    Forget Your Password?
+                    <a href="#">Click Here</a>
+                </p>
+                <p>
+                    Don't Have An Account?
+                    <a href="#">Create Now</a>
+                </p>
+                <input type="submit" value="Login Now" class="btn">
+            </form> {% endcomment %}
+        </header>
+        <!-- Header Section -->
+        <!-- Banner Section -->
+        <section class="home" id="home">
+            <div class="content">
+                <h3>
+                    Fresh And
+                    <span>Organic</span>
+                    Products For You
+                </h3>
+                <p>From Farm to Table: Handpicked Just for You</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </section>
+        <!-- Banner Section -->
+
+        <!-- Our Feature Section -->
+        <section class="features" id="features">
+            <h1 class="heading">
+                Our
+                <span>Features</span>
+            </h1>
+            <div class="box-container">
+
+                <!-- Dynamic changes -->
+
+                {% for n in features_data %}
+
+
+                <div class="box">
+                    <img src="/media/{{n.feature_img}}" alt="">
+                    <h3>{{n.feature_title}}</h3>
+                    <p>{{n.feature_dec}}</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                {% endfor %}
+
+                {% comment %} <div class="box">
+                    <img src="/static/images/feature-img-2.png" alt="">
+                    <h3>Free Delivery</h3>
+                    <p>Get your organic vegetables delivered for free, straight to your doorstep.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="box">
+                    <img src="/static/images/feature-img-3.png" alt="">
+                    <h3>Easy Payments</h3>
+                    <p>Simplify your shopping with hassle-free payments for our organic vegetables.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div> {% endcomment %}
+            </div>
+        </section>
+        <!-- Our Feature Section -->
+
+        
+        <!-- Our Product Section -->
+        <section class="products" id="products">
+            <h1 class="heading">
+                Our
+                <span>Products</span>
+            </h1>
+            <div class="swiper product-slider">
+                <div class="swiper-wrapper">
+                    {% for m in products_data %}
+                    <div class="swiper-slide box">
+                        <img src="/media/{{m.product_img}}" alt="">
+                        <h1>{{m.product_name}}</h1>
+                        <div class="price">{{m.product_price}}</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div>
+                    {% endfor %}
+                    {% comment %} <div class="swiper-slide box">
+                        <img src="/static/images/product-2.png" alt="">
+                        <h1>Onion</h1>
+                        <div class="price">₹50/- ~ ₹60/-</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div>
+                    <div class="swiper-slide box">
+                        <img src="/static/images/product-3.png" alt="">
+                        <h1>Chicken</h1>
+                        <div class="price">₹100/- ~ ₹150/-</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div>
+                    <div class="swiper-slide box">
+                        <img src="/static/images/product-4.png" alt="">
+                        <h1>Cabbage</h1>
+                        <div class="price">₹40/- ~ ₹50/-</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+            <div class="swiper product-slider">
+                <div class="swiper-wrapper">
+                    {% for m in products_data reversed %}
+                    <div class="swiper-slide box">
+                        <img src="/media/{{m.product_img}}" alt="">
+                        <h1>{{m.product_name}}</h1>
+                        <div class="price">{{m.product_price}}</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div>
+                    {% endfor %}
+                    {% comment %} <div class="swiper-slide box">
+                        <img src="/static/images/product-6.png" alt="">
+                        <h1>Guava</h1>
+                        <div class="price">₹20/- ~ ₹50/-</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div>
+                    <div class="swiper-slide box">
+                        <img src="/static/images/product-7.png" alt="">
+                        <h1>Carrot</h1>
+                        <div class="price">₹40/- ~ ₹80/-</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div>
+                    <div class="swiper-slide box">
+                        <img src="/static/images/product-8.png" alt="">
+                        <h1>Lemon</h1>
+                        <div class="price">₹10/- ~ ₹20/-</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                        <a href="#" class="btn">Add To Cart</a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </section>
+        <!-- Our Product Section -->
+
+
+
+        <!-- Our Categories Section -->
+        <section class="categories" id="categories">
+            <h1 class="heading">
+                Product
+                <span>Categories</span>
+            </h1>
+            <div class="box-container">
+                {% for x in categories_data %}
+                <div class="box">
+                    <img src="/media/{{x.categorie_img}}" alt="">
+                    <h3>{{x.categorie_name}}</h3>
+                    <p>Upto {{x.categorie_discount}} Off</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+                {% endfor %}
+                {% comment %} <div class="box">
+                    <img src="/static/images/cat-2.png" alt="">
+                    <h3>Fresh Fruits</h3>
+                    <p>Upto 45% Off</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+                <div class="box">
+                    <img src="/static/images/cat-3.png" alt="">
+                    <h3>Dairy Products</h3>
+                    <p>Upto 45% Off</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+                <div class="box">
+                    <img src="/static/images/cat-4.png" alt="">
+                    <h3>Fresh Meat</h3>
+                    <p>Upto 45% Off</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div> {% endcomment %}
+            </div>
+        </section>
+        <!-- Our Categories Section -->
+
+
+        <!-- Review Section -->
+
+
+        <section class="review" id="review">
+            <h1 class="heading">
+                Customer's
+                <span>Reviews</span>
+            </h1>
+            <div class="swiper review-slider">
+                <div class="swiper-wrapper">
+
+                    {% for p in reviews_data %}
+
+                    <div class="swiper-slide box">
+                        <img src="/media/{{p.reviewer_img}}" alt="">
+                        <p>{{p.reviewer_dec}}</p>
+                        <h3>{{p.reviewer_name}}</h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    {% comment %} <div class="swiper-slide box">
+                        <img src="/static/images/pic-2.png" alt="">
+                        <p>As a health-conscious consumer, I've been blown away by the variety and quality offered here. From crisp lettuce to succulent tomatoes, every bite is a delight.</p>
+                        <h3>Prakriti Vihara</h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <img src="/static/images/pic-3.png" alt="">
+                        <p>The convenience of ordering organic vegetables online is unbeatable.Knowing they're sustainably sourced makes every meal feel good for both body and planet!</p>
+                        <h3>Sasya Sankalpa</h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <img src="/static/images/pic-4.png" alt="">
+                        <p>I've never tasted vegetables so rich in flavor until I tried those from this portal. It's evident that quality and care go into every step of cultivation and delivery.</p>
+                        <h3>Dhara Dharini</h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </section>
+        <!-- Review Section -->
+
+        <!-- Blog Section -->
+
+        <section class="blogs" id="blogs">
+            <h1 class="heading">
+                Our
+                <span>Blogs</span>
+            </h1>
+            <div class="box-container">
+
+                {% for z in blogs_data %}
+                <div class="box">
+                    <img src="/media/{{z.blog_img}}" alt="">
+                    <div class="content">
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-user"></i>
+                                {{z.blog_author}}
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                {{z.blog_date}}
+                            </a>
+                        </div>
+                        <h3>{{z.blog_title}}</h3>
+                        <p>{{z.blog_dec}}</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% comment %} <div class="box">
+                    <img src="/static/images/blog-2.jpg" alt="">
+                    <div class="content">
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-user"></i>
+                                By User
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                5th April 2024
+                            </a>
+                        </div>
+                        <h3>Fresh And Organic Vegetables And Fruits</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, vero?</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="/static/images/blog-3.jpg" alt="">
+                    <div class="content">
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fa fa-user"></i>
+                                By User
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                5th April 2024
+                            </a>
+                        </div>
+                        <h3>Fresh And Organic Vegetables And Fruits</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, vero?</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </section>
+        <!-- Blog Section -->
+
+        
+        <!-- Footer Section -->
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        GFresh
+                    </h3>
+                    <p>Feel Free To Follow Us On Our Social Media Handlers All The Links Are Given Below.</p>
+                    <div class="share">
+                        <a href="#" class="fa-brands fa-meta"></a>
+                        <a href="#" class="fa-brands fa-x-twitter"></a>
+                        <a href="#" class="fa-brands fa-instagram"></a>
+                        <a href="#" class="fa-brands fa-linkedin"></a>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <a href="#" class="links">
+                        <i class="fa fa-phone"></i>
+                        +91 1234567890
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-phone"></i>
+                        +91 1234567890
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-envelope"></i>
+                        info@example.com
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-map-marker"></i>
+                        Pune, India - 411062
+                    </a>
+                </div>
+                <div class="box">
+                    <h3>Quick Links</h3>
+                    <a href="#" class="links">
+                        <i class="fa fa-arrow-right"></i>
+                        Home
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-arrow-right"></i>
+                        Features
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-arrow-right"></i>
+                        Products
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-arrow-right"></i>
+                        Categories
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-arrow-right"></i>
+                        Review
+                    </a>
+                    <a href="#" class="links">
+                        <i class="fa fa-arrow-right"></i>
+                        Blogs
+                    </a>
+                </div>
+                <form method="POST" action ='{% url "savesubscribe" %}'>
+                    {% csrf_token %}
+                    <div class="box">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe For Latest Updates</p>
+                        <input type="email" class="email" name = 'email' placeholder="Enter Your Email">
+                        <input type="submit" value="Subscribe" class="btn">
+                        <img src="/static/images/payment.png" alt="">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <div class="credit">
+            Created By
+            <span>GFresh</span>
+            | All Rights Reserved
+        </div>
+        <script src="static/js/script.js"></script>
+        <!-- Import Swiper library -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+        <!-- Initialize Swiper -->
+        <script>
+        var swiper = new Swiper(".product-slider", {
+          loop: true,
+          spaceBetween: 20,
+          autoplay:{
+            delay:2000,
+            disableOnInteraction:false,
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1020: {
+              slidesPerView: 3,
+            },
+          },
+        });
+        
+        var swiper = new Swiper(".review-slider", {
+          loop: true,
+          spaceBetween: 20,
+          autoplay:{
+            delay:2000,
+            disableOnInteraction:false,
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1020: {
+              slidesPerView: 3,
+            },
+          },
+        });
+        </script>
+    </body>
+</html>
